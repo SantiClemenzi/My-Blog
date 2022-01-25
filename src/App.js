@@ -23,6 +23,7 @@ const App = () => {
 						<Route path="/about" element={<About />} />
 						{/* establecemos la ruta por la que se enviara el id */}
 						<Route path="/post/:id" element={<Post />} />
+						{/* redireccionamiento Error404 */}
 						<Route path="*" element={<Error404/>}/>
 					</Routes>
 				</Main>
