@@ -1,14 +1,22 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+// arreglo con los articulos dentro
+import posts from './../data/posts';
 
 const Blog = () => {
 	return (
 		<div>
 			<h2>Blog</h2>
 			<ul>
-				<li>Article #1</li>
-				<li>Article #2</li>
-				<li>Article #3</li>
-				<li>Article #4</li>
+				{/* recorremos el arreglo con los articulos */}
+				{posts.map((post) => {
+					// enviamos el id por el enlace y imprimimos el titulo de cada articulo
+					return (
+						<li key={post.id}>
+							<NavLink to={`/post/${post.id}`}>{post.titulo}</NavLink>
+						</li>
+					);
+				})}
 			</ul>
 		</div>
 	);
