@@ -1,6 +1,6 @@
 import React from "react";
-// hook use param para obtener el id por enlace
-import { useParams } from "react-router-dom";
+// useParm para obtener el id por enlace y Navigate para redireccionar la pagina
+import { useParams, Navigate} from "react-router-dom";
 // arreglo con los articulos dentro
 import posts from "../data/posts";
 
@@ -9,8 +9,13 @@ const Post = () => {
     const {id} = useParams();
     return ( 
         <div>
+            {posts[id-1]?
+            <>
            <h1>{posts[id-1].titulo}</h1>
            <p>{posts[id-1].texto}</p>
+           </>
+           :<Navigate replace to={'/blog'}/>
+            }
         </div>
      );
 }
