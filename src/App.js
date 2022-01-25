@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Blog from './components/Blog';
 import About from './components/About';
 import Post from './components/Post';
+import Error404 from './components/Error404';
 
 const App = () => {
 	return (
@@ -22,6 +23,7 @@ const App = () => {
 						<Route path="/about" element={<About />} />
 						{/* establecemos la ruta por la que se enviara el id */}
 						<Route path="/post/:id" element={<Post />} />
+						<Route path="*" element={<Error404/>}/>
 					</Routes>
 				</Main>
 			</ContenedorPrincipal>
