@@ -15,27 +15,27 @@ const Header = () => {
 	);
 };
 // styled component
-const ContenedorHeader = styled.header `
+const ContenedorHeader = styled.header`
 	text-align: center;
 	margin-bottom: 40px;
 `;
 // styled component
-const Titulo = styled.h1 `
+const Titulo = styled.h1`
 	margin-bottom: 10px;
 	font-size: 26px;
 	text-transform: uppercase;
 `;
-// styled component 
-const Menu = styled.nav `
-	a{
+// styled component
+const Menu = styled.nav`
+	a {
 		text-decoration: none;
 		color: #165168;
 		margin: 0px 10px;
 	}
-	a:hover{
+	a:hover {
 		color: #000;
 	}
-	a.active{
+	a.active {
 		border-bottom: 2px solid #165168;
 	}
 `;

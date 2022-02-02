@@ -19,7 +19,7 @@ const Blog = () => {
 					);
 				})}
 			</ul>
-			<Controles/>
+			<Controles />
 		</div>
 	);
 };

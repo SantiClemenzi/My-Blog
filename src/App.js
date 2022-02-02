@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // react router
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // styled component
 import styled from 'styled-components';
+// contexto
+import { ContextoTema } from './contextos/contextoTema';
 // componentes
 import Header from './components/Header';
 import Home from './components/Home';
@@ -12,11 +14,13 @@ import Post from './components/Post';
 import Error404 from './components/Error404';
 
 const App = () => {
+	// accedemos al objeto tema
+	const { tema } = useContext(ContextoTema);
 	return (
 		<BrowserRouter>
 			<ContenedorPrincipal>
 				<Header />
-				<Main>
+				<Main tema={tema}>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/blog" element={<Blog />} />
@@ -24,7 +28,7 @@ const App = () => {
 						{/* establecemos la ruta por la que se enviara el id */}
 						<Route path="/post/:id" element={<Post />} />
 						{/* redireccionamiento Error404 */}
-						<Route path="*" element={<Error404/>}/>
+						<Route path="*" element={<Error404 />} />
 					</Routes>
 				</Main>
 			</ContenedorPrincipal>
@@ -41,6 +45,8 @@ const ContenedorPrincipal = styled.div`
 
 // styled component
 const Main = styled.main`
+	font-size: ${(props) => (props.tema ? props.tema.fuente + 'px' : '20px')};
+	text-align: ${(props) => (props.tema ? props.tema.alineado : 'left')};
 	background-color: #fff;
 	padding: 40px;
 	border-radius: 10px;
