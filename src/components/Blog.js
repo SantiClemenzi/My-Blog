@@ -2,7 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 // arreglo con los articulos dentro
 import posts from './../data/posts';
-
+// components
+import Controles from './Controles';
 const Blog = () => {
 	return (
 		<div>
@@ -18,6 +19,7 @@ const Blog = () => {
 					);
 				})}
 			</ul>
+			<Controles/>
 		</div>
 	);
 };
